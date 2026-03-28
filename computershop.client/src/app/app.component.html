@@ -1,117 +1,90 @@
-<div class="page-shell">
-  <header class="site-header">
-    <a class="logo" href="#top" aria-label="Patel Enterprise Home">{{ brand }}</a>
-    <nav aria-label="Primary navigation">
+<div class="site-wrap">
+  <header class="topbar">
+    <a class="logo" href="#home" aria-label="PMS home">{{ brand }}</a>
+    <nav aria-label="Primary">
       <a href="#about">About</a>
       <a href="#services">Services</a>
-      <a href="#process">Process</a>
-      <a href="#plans">Plans</a>
+      <a href="#blog">Blog</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#pricing">Pricing</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="button ghost" href="tel:+919999999999">Call Now</a>
+    <div class="actions">
+      <a class="btn btn-outline" href="#contact">Schedule Consultation</a>
+      <a class="btn btn-solid" href="#">Login</a>
+    </div>
   </header>
 
   <main>
-    <section class="hero" id="top">
-      <div class="hero-copy">
-        <p class="eyebrow">Patel Enterprise · Sales & Services</p>
-        <h1>{{ title }}</h1>
-        <p>{{ tagline }}</p>
-        <div class="hero-actions">
-          <a class="button solid" href="mailto:support@patelenterprise.com">Schedule Consultation</a>
-          <a class="button ghost" href="#about">Learn More</a>
-        </div>
+    <section class="hero" id="home">
+      <h1>{{ headlinePrefix }} <span>Financial Future</span></h1>
+      <p>{{ subheadline }}</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="#contact">Schedule a Consultation <span aria-hidden="true">→</span></a>
+        <a class="btn btn-outline" href="#about">Learn More</a>
       </div>
-      <aside class="hero-card" aria-label="Company metrics">
-        <article *ngFor="let stat of stats">
-          <h3>{{ stat.value }}</h3>
-          <p>{{ stat.label }}</p>
-        </article>
-      </aside>
     </section>
 
-    <section class="section about" id="about">
-      <div>
-        <p class="eyebrow">Who We Are</p>
-        <h2>Your Local Technology Partner for Reliable Operations</h2>
+    <section class="about" id="about">
+      <div class="about-copy">
+        <p class="section-label">Who We Are</p>
+        <h2>Trusted Advisors with a Client-First Approach</h2>
         <p>
-          We help homes, stores, clinics, and offices build dependable infrastructure with practical advice,
-          quality hardware, and long-term service support. Our mission is simple: secure your premises,
-          optimize your systems, and keep your business running without interruptions.
+          At PMS Investment Services, we understand that your wealth deserves a careful and strategic approach. With over two decades of
+          experience in portfolio management, we have built our reputation on disciplined execution and transparent communication.
         </p>
       </div>
-      <div class="grid three" id="services">
-        <article class="card" *ngFor="let feature of features">
-          <h3>{{ feature.title }}</h3>
-          <p>{{ feature.description }}</p>
+      <div class="about-image" role="img" aria-label="Professional financial advisory team"></div>
+    </section>
+
+    <section class="panel" id="services">
+      <p class="section-label">Services</p>
+      <h2>Comprehensive Financial Solutions</h2>
+      <div class="grid grid-3">
+        <article class="card" *ngFor="let service of services">
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
         </article>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="principles-title">
-      <p class="eyebrow">Our Service Philosophy</p>
-      <h2 id="principles-title">Built on Trust, Clarity, and Performance</h2>
-      <div class="grid two">
-        <article class="card" *ngFor="let principle of principles">
-          <h3>{{ principle.title }}</h3>
-          <p>{{ principle.description }}</p>
+    <section class="panel" id="testimonials">
+      <p class="section-label">Testimonials</p>
+      <h2>What Our Clients Say</h2>
+      <div class="grid grid-3">
+        <article class="card quote" *ngFor="let item of testimonials">
+          <p>“{{ item.quote }}”</p>
+          <h3>{{ item.name }}</h3>
+          <small>{{ item.role }}</small>
         </article>
       </div>
     </section>
 
-    <section class="section" id="process" aria-labelledby="process-title">
-      <p class="eyebrow">How It Works</p>
-      <h2 id="process-title">Simple Onboarding, Professional Delivery</h2>
-      <div class="timeline">
-        <article *ngFor="let step of process; index as i">
-          <span>{{ i + 1 }}</span>
-          <div>
-            <h3>{{ step.title }}</h3>
-            <p>{{ step.description }}</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="plans" aria-labelledby="plans-title">
-      <p class="eyebrow">Plans & Coverage</p>
-      <h2 id="plans-title">Transparent Service Packages</h2>
-      <div class="grid three pricing">
-        <article class="card plan" *ngFor="let plan of plans" [class.featured]="plan.featured">
-          <p class="plan-label" *ngIf="plan.featured">Most Popular</p>
+    <section class="panel" id="pricing">
+      <p class="section-label">Pricing</p>
+      <h2>Flexible Plans for Every Stage</h2>
+      <div class="grid grid-3">
+        <article class="card price-card" *ngFor="let plan of pricing" [class.featured]="plan.featured">
           <h3>{{ plan.name }}</h3>
-          <p class="audience">{{ plan.audience }}</p>
-          <p class="price">{{ plan.price }} <small>{{ plan.billing }}</small></p>
+          <p class="price">{{ plan.price }}</p>
+          <p>{{ plan.detail }}</p>
           <ul>
             <li *ngFor="let feature of plan.features">{{ feature }}</li>
           </ul>
-          <a class="button solid full" href="mailto:support@patelenterprise.com">Get Started</a>
+          <a class="btn btn-solid full" href="#contact">Get Started</a>
         </article>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="faq-title">
-      <p class="eyebrow">FAQs</p>
-      <h2 id="faq-title">Common Questions from Customers</h2>
-      <div class="faq-list">
-        <details *ngFor="let item of faqs">
-          <summary>{{ item }}</summary>
-          <p>Contact our team and we will provide a quick, personalized response based on your exact requirements.</p>
-        </details>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer" id="contact">
+  <footer id="contact">
     <div>
-      <h3>{{ brand }}</h3>
-      <p>Empowering secure, productive, and connected workplaces across the region.</p>
+      <h3>{{ brand }} Investment Services</h3>
+      <p>Professional portfolio guidance for confident financial decisions.</p>
     </div>
     <div>
-      <h4>Contact</h4>
-      <p><a href="mailto:support@patelenterprise.com">support@patelenterprise.com</a></p>
-      <p><a href="tel:+919999999999">+91 99999 99999</a></p>
-      <p>Ahmedabad, Gujarat</p>
+      <a href="mailto:advisor@pms.example">advisor@pms.example</a>
+      <a href="tel:+18005551234">+1 (800) 555-1234</a>
     </div>
   </footer>
 </div>
