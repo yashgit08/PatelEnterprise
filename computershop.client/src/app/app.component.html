@@ -1,35 +1,65 @@
-<div class="page">
-  <header class="hero card">
-    <p class="eyebrow">Welcome to</p>
-    <h1>{{ title }}</h1>
-    <p class="tagline">{{ tagline }}</p>
-    <a class="cta" href="tel:+910000000000">Call for a free consultation</a>
+<div class="theme-shell">
+  <header class="topbar card">
+    <p class="brand">Patel Enterprise</p>
+    <nav aria-label="Primary navigation">
+      <a href="#services-title">Services</a>
+      <a href="#why-title">Why Us</a>
+      <a href="#contact-title">Contact</a>
+    </nav>
   </header>
 
-  <section class="card" aria-labelledby="services-title">
-    <h2 id="services-title">Our Products & Services</h2>
-    <div class="service-grid">
-      <article class="service" *ngFor="let service of services">
-        <h3>{{ service.title }}</h3>
-        <p>{{ service.description }}</p>
-      </article>
-    </div>
-  </section>
+  <main class="page">
+    <section class="hero card">
+      <div class="hero-content">
+        <p class="eyebrow">Trusted IT Partner</p>
+        <h1>{{ title }}</h1>
+        <p class="tagline">{{ tagline }}</p>
+        <div class="hero-actions">
+          <a class="cta primary" href="tel:+910000000000">Call for Consultation</a>
+          <a class="cta ghost" href="mailto:support@patelenterprise.com">Email Support</a>
+        </div>
+      </div>
+      <div class="hero-stats" aria-label="Business highlights">
+        <article>
+          <h3>24/7</h3>
+          <p>Support desk availability</p>
+        </article>
+        <article>
+          <h3>10+</h3>
+          <p>Years of service experience</p>
+        </article>
+        <article>
+          <h3>500+</h3>
+          <p>Installations delivered</p>
+        </article>
+      </div>
+    </section>
 
-  <section class="card" aria-labelledby="why-title">
-    <h2 id="why-title">Why Choose Patel Enterprise?</h2>
-    <ul>
-      <li *ngFor="let item of highlights">{{ item }}</li>
-    </ul>
-  </section>
+    <section class="card" aria-labelledby="services-title">
+      <h2 id="services-title">Our Products & Services</h2>
+      <div class="service-grid">
+        <article class="service" *ngFor="let service of services">
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </article>
+      </div>
+    </section>
 
-  <footer class="card contact" aria-labelledby="contact-title">
-    <h2 id="contact-title">Contact Us</h2>
-    <p>Patel Enterprise - Sales & Services</p>
-    <p>Serving homes, shops, and offices with complete IT and security solutions.</p>
-    <p>
-      <strong>Email:</strong>
-      <a href="mailto:support@patelenterprise.com">support@patelenterprise.com</a>
-    </p>
-  </footer>
+    <section class="card" aria-labelledby="why-title">
+      <h2 id="why-title">Why Choose Patel Enterprise?</h2>
+      <ul>
+        <li *ngFor="let item of highlights">{{ item }}</li>
+      </ul>
+    </section>
+
+    <footer class="card contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact Us</h2>
+      <p>Patel Enterprise - Sales & Services</p>
+      <p>Serving homes, shops, and offices with complete IT and security solutions.</p>
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:support@patelenterprise.com">support@patelenterprise.com</a>
+      </p>
+    </footer>
+  </main>
 </div>
