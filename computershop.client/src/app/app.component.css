@@ -1,14 +1,100 @@
-﻿:host {
-    max-width: 1280px;
-    padding: 2rem;
-    text-align: center;
+:host {
+  display: block;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f2f7ff 0%, #f7fbff 100%);
+  color: #1b2b45;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-th, td {
-    padding-left: 1rem;
-    padding-right: 1rem;
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
 }
 
-table {
-    margin: 0 auto;
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(20, 42, 77, 0.08);
+  margin-bottom: 1rem;
+}
+
+.hero {
+  background: linear-gradient(135deg, #0f4aa7, #1b66da);
+  color: #ffffff;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
+h1 {
+  margin: 0.4rem 0;
+  font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+}
+
+.tagline {
+  margin: 0;
+  max-width: 650px;
+  line-height: 1.5;
+}
+
+.cta {
+  margin-top: 1rem;
+  display: inline-block;
+  background: #ffffff;
+  color: #10479f;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  color: #0f2d63;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.8rem;
+}
+
+.service {
+  border: 1px solid #d9e6ff;
+  border-radius: 10px;
+  padding: 0.9rem;
+  background: #f8fbff;
+}
+
+.service h3 {
+  margin: 0 0 0.5rem;
+  color: #163d80;
+  font-size: 1rem;
+}
+
+.service p,
+.contact p,
+li {
+  margin: 0;
+  line-height: 1.55;
+  color: #324a72;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.contact a {
+  color: #0f4aa7;
+  text-decoration: none;
 }
