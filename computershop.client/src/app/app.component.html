@@ -1,15 +1,35 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand">Computer Shop</a>
+<div class="page">
+  <header class="hero card">
+    <p class="eyebrow">Welcome to</p>
+    <h1>{{ title }}</h1>
+    <p class="tagline">{{ tagline }}</p>
+    <a class="cta" href="tel:+910000000000">Call for a free consultation</a>
+  </header>
 
-    <div>
-      <a class="nav-link d-inline text-white" routerLink="/">Home</a>
-      <a class="nav-link d-inline text-white" routerLink="/products">Products</a>
-      <a class="nav-link d-inline text-white" routerLink="/contact">Contact</a>
+  <section class="card" aria-labelledby="services-title">
+    <h2 id="services-title">Our Products & Services</h2>
+    <div class="service-grid">
+      <article class="service" *ngFor="let service of services">
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+      </article>
     </div>
-  </div>
-</nav>
+  </section>
 
-<div class="container mt-4">
-  <router-outlet></router-outlet>
+  <section class="card" aria-labelledby="why-title">
+    <h2 id="why-title">Why Choose Patel Enterprise?</h2>
+    <ul>
+      <li *ngFor="let item of highlights">{{ item }}</li>
+    </ul>
+  </section>
+
+  <footer class="card contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Contact Us</h2>
+    <p>Patel Enterprise - Sales & Services</p>
+    <p>Serving homes, shops, and offices with complete IT and security solutions.</p>
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:support@patelenterprise.com">support@patelenterprise.com</a>
+    </p>
+  </footer>
 </div>
