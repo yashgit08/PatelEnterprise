@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="computershop.client/computershop.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="ComputerShop.Server/ComputerShop.Server.csproj" />
+</Solution>
