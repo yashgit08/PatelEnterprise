@@ -21,11 +21,12 @@ describe('AppComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should include Patel Enterprise title', () => {
-    expect(component.title).toContain('Patel Enterprise');
+  it('should expose PMS brand identity', () => {
+    expect(component.brand).toBe('PMS');
+    expect(component.headlinePrefix).toContain('Empowering');
   });
 
-  it('should expose four service cards', () => {
-    expect(component.services.length).toBe(4);
+  it('should expose three service cards', () => {
+    expect(component.services.length).toBe(3);
   });
 });
