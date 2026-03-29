@@ -5,18 +5,14 @@ interface ServiceItem {
   description: string;
 }
 
-interface TestimonialItem {
-  quote: string;
-  name: string;
-  role: string;
+interface HighlightItem {
+  value: string;
+  label: string;
 }
 
-interface PricingItem {
-  name: string;
-  price: string;
-  detail: string;
-  features: string[];
-  featured?: boolean;
+interface SolutionItem {
+  title: string;
+  description: string;
 }
 
 @Component({
@@ -25,63 +21,86 @@ interface PricingItem {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  readonly brand = 'PMS';
-  readonly headlinePrefix = 'Empowering Your';
+  readonly brand = 'Patel Enterprise';
+  readonly tagline = 'Sales & Services';
+  readonly currentYear = new Date().getFullYear();
+  readonly headlinePrefix = 'Reliable IT Sales, CCTV, Networking and';
+  readonly headlineHighlight = 'Business Support';
   readonly subheadline =
-    'Tailored investment strategies for discerning investors. Experience professional portfolio management with expertise, transparency, and unwavering trust.';
+    'Patel Enterprise delivers trusted computer, laptop, CCTV, fire alarm, networking and security solutions for homes, offices and growing businesses.';
+  readonly officeAddress =
+    'Shop No. G-14, Basement, Megh Malhar Complex, Opp. HP Petrol Pump, Sector 11, Gandhinagar, Gujarat 382011';
+  readonly email = 'sandipengineer@gmail.com';
+  readonly primaryPhone = '8849614217';
+  readonly secondaryPhone = '7801877041';
+  readonly whatsappLink = 'https://wa.me/918849614217';
 
   readonly services: ServiceItem[] = [
     {
-      title: 'Wealth Planning',
-      description: 'Goal-focused plans for education, retirement, and generational wealth transfer.'
+      title: 'CCTV Surveillance Systems',
+      description: 'Supply, installation and maintenance of CCTV setups for shops, offices, societies and industrial sites.'
     },
     {
-      title: 'Portfolio Management',
-      description: 'Data-backed portfolio construction with active risk management and diversification.'
+      title: 'Computer & Laptop Sales',
+      description: 'Desktops, laptops, printers, accessories and genuine components from leading technology brands.'
     },
     {
-      title: 'Tax Optimization',
-      description: 'Tax-aware investing strategies that protect returns and support long-term growth.'
+      title: 'Networking Solutions',
+      description: 'Structured cabling, router setup, Wi-Fi coverage, switch installation and office network support.'
+    },
+    {
+      title: 'Fire Alarm Systems',
+      description: 'Complete fire alarm system support with practical guidance for reliable protection and compliance.'
+    },
+    {
+      title: 'Hardware & Software Support',
+      description: 'Troubleshooting, upgrades, formatting, software installation and preventive maintenance services.'
+    },
+    {
+      title: 'Data Storage & Security',
+      description: 'Backup planning, storage devices, system protection and security-focused IT support for daily operations.'
     }
   ];
 
-  readonly testimonials: TestimonialItem[] = [
+  readonly highlights: HighlightItem[] = [
     {
-      quote: 'Their disciplined approach gave me confidence and measurable long-term growth.',
-      name: 'Michael Turner',
-      role: 'Business Owner'
+      value: '7+',
+      label: 'Key service categories'
     },
     {
-      quote: 'Clear reporting, practical advice, and excellent communication at every step.',
-      name: 'Olivia Brooks',
-      role: 'Healthcare Professional'
+      value: 'Home to Office',
+      label: 'Solutions for every scale'
     },
     {
-      quote: 'From planning to execution, they handled our family portfolio exceptionally well.',
-      name: 'Daniel Reed',
-      role: 'Entrepreneur'
+      value: 'Fast Support',
+      label: 'Responsive service assistance'
     }
   ];
 
-  readonly pricing: PricingItem[] = [
+  readonly solutions: SolutionItem[] = [
     {
-      name: 'Starter Advisory',
-      price: '$199/mo',
-      detail: 'For individuals beginning their investment journey.',
-      features: ['Financial health review', 'Quarterly portfolio check-ins', 'Email support']
+      title: 'For Homes & Apartments',
+      description: 'Security cameras, Wi-Fi improvement, laptop setup and everyday repair support.'
     },
     {
-      name: 'Growth Strategy',
-      price: '$449/mo',
-      detail: 'For professionals seeking active portfolio guidance.',
-      features: ['Custom asset allocation', 'Monthly performance reports', 'Priority advisor access', 'Tax planning support'],
-      featured: true
+      title: 'For Shops & Offices',
+      description: 'Business systems, attendance and surveillance support, networking and printer solutions.'
     },
     {
-      name: 'Private Wealth',
-      price: 'Custom',
-      detail: 'For families and executives with complex financial goals.',
-      features: ['Dedicated wealth manager', 'Estate and legacy planning', 'Advanced risk analytics']
+      title: 'For Ongoing Maintenance',
+      description: 'Annual or on-call technical assistance to keep systems stable, secure and productive.'
     }
   ];
+
+  readonly brands: string[] = ['HP', 'Dell', 'Apple', 'Asus', 'Lenovo', 'Toshiba', 'Acer'];
+
+  isMenuOpen = false;
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
+  }
 }
