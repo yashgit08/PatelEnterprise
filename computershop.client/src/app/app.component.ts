@@ -23,6 +23,7 @@ interface SolutionItem {
 export class AppComponent {
   readonly brand = 'Patel Enterprise';
   readonly tagline = 'Sales & Services';
+  readonly currentYear = new Date().getFullYear();
   readonly headlinePrefix = 'Reliable IT Sales, CCTV, Networking and';
   readonly headlineHighlight = 'Business Support';
   readonly subheadline =
@@ -92,4 +93,14 @@ export class AppComponent {
   ];
 
   readonly brands: string[] = ['HP', 'Dell', 'Apple', 'Asus', 'Lenovo', 'Toshiba', 'Acer'];
+
+  isMenuOpen = false;
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
+  }
 }
